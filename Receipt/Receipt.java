@@ -9,7 +9,7 @@ public class Receipt {
 	private double taxRate;
 	private String paymentType;
 	
-	//Constructor
+	// Part 2 - Constructor
 	public Receipt(String storeName, String cashierName, String greeting, String[][] groceryList, double taxRate,
 			String paymentType) {
 		this.storeName = storeName;
@@ -21,6 +21,7 @@ public class Receipt {
 		System.out.println(toString());
 	}
 	
+	// Part 3 - Methods
 	public double calculateSubTotal(String[][] groceryList) {
 		double result = 0.0;
 		for (int i = 0; i < groceryList.length; i++) {
