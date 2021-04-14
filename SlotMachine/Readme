@@ -1,17 +1,17 @@
 Part 1: At the end of this video you will have a very basic slot machine that returns a row of random numbers. 
 Youtube: https://youtu.be/Q4KRC981_DM
 
-Part 2:
-Youtube:
+Part 2: Now we are adding a running balance and an adjustable view box.
+Youtube: https://youtu.be/CUwtDDKT1iY
 
-Part 3:
-Youtube:
+Part 3: This time we do some refactoring and get the cost of a spin calculator.
+Youtube: https://youtu.be/YVQdYe8oHoI
 
-Part 4:
-Youtube:
+Part 4: Implementing the pay line logic and then found a bug. Uh oh!!
+Youtube: https://youtu.be/CVgux6oo58g
 
-Part 5:
-Youtube:
+Part 5: Fixed the bug. All pay line logic gets finished.
+Youtube: https://youtu.be/NfwWuJDEKaA
 
-Part 6:
-Youtube:
+Part 6: Winning pay line that was selected increments the users balance. Stop the looping logic when the user does not have enough to make another bet.
+Youtube: https://youtu.be/aZsLcskkkcQ
