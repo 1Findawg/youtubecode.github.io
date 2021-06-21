@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1Findawg - Dive Scoreboard</title>
+        <script src="../js/header.js"></script>
+        <script src="../js/diveList.js"></script>
+        <script src="../js/diveCard.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/global.css">
+        <link rel="stylesheet" type="text/css" href="../css/diveCard.css">
+        <link rel="stylesheet" type="text/css" href="../css/header.css">
+        <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    </head>
+    <body>
+        <h1 class="center">1Findawg - Dive Scoreboard</h1>
+        <div class="card">
+            <div class="radioBtnWrapper">
+                <div class="diveCount flex">
+                    <div class="rightBorder radioBtnSpacing">
+                        <input name="diveCount" type="radio" onclick="setDiveCount(6)" checked>6 Dives</input>
+                    </div>
+                    <div class="flex radioBtnSpacing">
+                        <input class="radioBtnSpacing" name="diveCount" type="radio" onclick="setDiveCount(11)">11 Dives</input>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="rightBorder radioBtnSpacing">
+                        <input class="radioBtnSpacing" name="judgeCount" type="radio" onclick="setJudgeCount(3)" checked>3 Judges</input>
+                    </div>
+                    <div class="radioBtnSpacing">
+                        <input name="judgeCount" type="radio" onclick="setJudgeCount(5)">5 Judges</input>
+                    </div>
+                    <div class="leftBorder flex radioBtnSpacing">
+                        <input name="judgeCount" type="radio" onclick="setJudgeCount(7)">7 Judges</input>
+                    </div>
+                </div>
+            </div>
+            <table id="diverTable">
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Team</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>Score</th>
+                    <th>To Win</th>
+                    <th>AVG to Win</th>
+                </tr>
+            </table>
+            <!-- Trigger/Open The Modal -->
+<!--            <button id="myBtn" onclick="showJudgeScoreModal()">Open Modal</button>-->
+            
+            <!-- The Modal -->
+            <div id="judgesModal" class="modal">
+                
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close" onclick="hideJudgeScoreModal()">&times;</span>
+                    <div id="judgeScoreInput" class="judgeScoreModal"></div>
+                </div>
+                
+            </div>
+            <button onclick="addDiver()">Add Diver</button>
+        </div>
+    </body>
+</html>
