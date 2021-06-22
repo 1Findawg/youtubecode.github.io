@@ -58,7 +58,7 @@ function reprintDivers() {
             diveNine = getDiverDiveBlock(diveCard,3,8);
             diveTen = getDiverDiveBlock(diveCard,3,9);
             diveEleven = getDiverDiveBlock(diveCard,3,10);
-            document.getElementById("diverTable").innerHTML += "<tr>" + rank + name + team + diveOne + diveTwo + diveThree + diveFour + diveFive + diveSix + diveSeven + diveEight + diveNine + diveTen + diveEleven + score + toWin + avgToWin + "</tr>";
+            document.getElementById("diverTable").innerHTML += "<tr class='"+(diveCard%2===1 ? "evenRowBackground" : "")+"'>" + rank + name + team + diveOne + diveTwo + diveThree + diveFour + diveFive + diveSix + diveSeven + diveEight + diveNine + diveTen + diveEleven + score + toWin + avgToWin + "</tr>";
         }
     }
     
@@ -69,7 +69,7 @@ function getDiverDiveBlock(diveCard,diverIndex,diveIndex) {
     var diveName = "<div>"+ (allDiveCards[diveCard][diverIndex][diveIndex].name === "" ? "-" : allDiveCards[diveCard][diverIndex][diveIndex].name) +"</div>";
     var diveDD = "<div>"+(allDiveCards[diveCard][diverIndex][diveIndex].DD === null ? "-" : allDiveCards[diveCard][diverIndex][diveIndex].DD)+"</div>";
 //    var diveScore = "<div>"+(allDiveCards[diveCard][diverIndex][diveIndex].score === null ? "-" : allDiveCards[diveCard][diverIndex][diveIndex].score)+"</div>";
-    var diveScore = "<button id='myBtn' onclick='showJudgeScoreModal("+diveCard+","+diveIndex+")'>"+(allDiveCards[diveCard][3][diveIndex].score === null ? "Score" : allDiveCards[diveCard][3][diveIndex].score)+"</button>";
+    var diveScore = "<button onclick='showJudgeScoreModal("+diveCard+","+diveIndex+")'>"+(allDiveCards[diveCard][3][diveIndex].score === null ? "Score" : allDiveCards[diveCard][3][diveIndex].score)+"</button>";
     return "<td>"+diveNumberInput+diveName+diveDD+diveScore+"</td>"
 }
 
@@ -208,6 +208,26 @@ function calculateDiverTotalScore(diveCard){
         }
     }
     allDiveCards[diveCard][4] = parseFloat(allDiveCards[diveCard][4].toFixed(2));
+    sortDiversBasedOnTotalScore();
+}
+
+function sortDiversBasedOnTotalScore() {
+    allDiveCards = allDiveCards.sort(function(a,b) {
+                   return b[4] - a[4];
+                   });
+    for (diveCard in allDiveCards) {
+        allDiveCards[diveCard][0] = parseInt(diveCard)+1;
+        allDiveCards[diveCard][5] = parseFloat((allDiveCards[0][4] - allDiveCards[diveCard][4]).toFixed(2));
+        var remainingDives = 0;
+        for (var i = 0; i < allDiveCards[diveCard][3].length; i++) {
+            if (allDiveCards[diveCard][3][i].score === null) {
+                remainingDives++;
+            }
+        }
+        if (remainingDives !== 0) {
+            allDiveCards[diveCard][6] = parseFloat((allDiveCards[diveCard][5] / remainingDives).toFixed(2));
+        }
+    }
 }
 
 //ToDo
