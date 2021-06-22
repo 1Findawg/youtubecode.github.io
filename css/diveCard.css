@@ -77,6 +77,9 @@ input {
 
 .radioBtnWrapper {
     display: flex;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .diveCount {
@@ -102,4 +105,8 @@ input {
 
 .evenRowBackground {
     background-color: lightgray;
+}
+
+.meter {
+    margin: 0 0 0 auto;
 }
