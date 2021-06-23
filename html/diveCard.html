@@ -4,7 +4,6 @@
         <title>1Findawg - Dive Scoreboard</title>
         <script src="../js/header.js"></script>
         <script src="../js/diveList.js"></script>
-        <script src="../js/diveCard.js"></script>
         <link rel="stylesheet" type="text/css" href="../css/global.css">
         <link rel="stylesheet" type="text/css" href="../css/diveCard.css">
         <link rel="stylesheet" type="text/css" href="../css/header.css">
@@ -35,10 +34,10 @@
                 </div>
                 <div class="meter flex">
                     <div class="rightBorder radioBtnSpacing">
-                        <input class="radioBtnSpacing" name="meter" type="radio" onclick="setMeter(1)" disabled>1 Meter</input>
+                        <input class="radioBtnSpacing" name="meter" type="radio" onclick="setMeter(1)">1 Meter</input>
                     </div>
                     <div class="radioBtnSpacing">
-                        <input name="meter" type="radio" onclick="setMeter(3)" disabled>3 Meter</input>
+                        <input name="meter" type="radio" onclick="setMeter(3)">3 Meter</input>
                     </div>
                     <div class="leftBorder flex radioBtnSpacing">
                         <input name="meter" type="radio" onclick="setMeter(10)" checked>10 Meter</input>
@@ -60,54 +59,54 @@
                     <th>To Win</th>
                     <th>AVG to Win</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td><input id="diverName01" value="" onchange="updateName(0,1)"></td>
-                    <td><input id="diverTeam02" value="" onchange="updateTeam(0,2)"></td>
-                    <td>
-                        <input id="number01" value="" onchange="updateDiveNumber(0,1)">
-                            <div>-</div>
-                            <div>-</div>
-                        <button onclick="showJudgeScoreModal(0,0)">Score</button>
-                    </td>
-                    <td>
-                        <input id="number02" value="" onchange="updateDiveNumber(0,2)">
-                            <div>-</div>
-                            <div>-</div>
-                        <button onclick="showJudgeScoreModal(0,1)">Score</button>
-                    </td>
-                    <td>
-                        <input id="number03" value="" onchange="updateDiveNumber(0,3)">
-                            <div>-</div>
-                            <div>-</div>
-                        <button onclick="showJudgeScoreModal(0,2)">Score</button>
-                    </td>
-                    <td>
-                        <input id="number04" value="" onchange="updateDiveNumber(0,4)">
-                            <div>-</div>
-                            <div>-</div>
-                            <button onclick="showJudgeScoreModal(0,3)">Score</button>
-                    </td>
-                    <td>
-                        <input id="number05" value="" onchange="updateDiveNumber(0,5)">
-                            <div>-</div>
-                            <div>-</div>
-                        <button onclick="showJudgeScoreModal(0,4)">Score</button>
-                    </td>
-                    <td>
-                        <input id="number06" value="" onchange="updateDiveNumber(0,6)">
-                            <div>-</div>
-                            <div>-</div>
-                        <button onclick="showJudgeScoreModal(0,5)">Score</button>
-                    </td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>-</td>
-                </tr>
+<!--                <tr>-->
+<!--                    <td>1</td>-->
+<!--                    <td><input id="diverName01" value="" onchange="updateName(0,1)"></td>-->
+<!--                    <td><input id="diverTeam02" value="" onchange="updateTeam(0,2)"></td>-->
+<!--                    <td>-->
+<!--                        <input id="number01" value="" onchange="updateDiveNumber(0,1)">-->
+<!--                            <div>-</div>-->
+<!--                            <div>-</div>-->
+<!--                        <button onclick="showJudgeScoreModal(0,0)">Score</button>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <input id="number02" value="" onchange="updateDiveNumber(0,2)">-->
+<!--                            <div>-</div>-->
+<!--                            <div>-</div>-->
+<!--                        <button onclick="showJudgeScoreModal(0,1)">Score</button>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <input id="number03" value="" onchange="updateDiveNumber(0,3)">-->
+<!--                            <div>-</div>-->
+<!--                            <div>-</div>-->
+<!--                        <button onclick="showJudgeScoreModal(0,2)">Score</button>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <input id="number04" value="" onchange="updateDiveNumber(0,4)">-->
+<!--                            <div>-</div>-->
+<!--                            <div>-</div>-->
+<!--                            <button onclick="showJudgeScoreModal(0,3)">Score</button>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <input id="number05" value="" onchange="updateDiveNumber(0,5)">-->
+<!--                            <div>-</div>-->
+<!--                            <div>-</div>-->
+<!--                        <button onclick="showJudgeScoreModal(0,4)">Score</button>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <input id="number06" value="" onchange="updateDiveNumber(0,6)">-->
+<!--                            <div>-</div>-->
+<!--                            <div>-</div>-->
+<!--                        <button onclick="showJudgeScoreModal(0,5)">Score</button>-->
+<!--                    </td>-->
+<!--                    <td>0</td>-->
+<!--                    <td>0</td>-->
+<!--                    <td>-</td>-->
+<!--                </tr>-->
             </table>
             <!-- Trigger/Open The Modal -->
 <!--            <button id="myBtn" onclick="showJudgeScoreModal()">Open Modal</button>-->
-            
+            <script src="../js/diveCard.js"></script>
             <!-- The Modal -->
             <div id="judgesModal" class="modal">
                 
