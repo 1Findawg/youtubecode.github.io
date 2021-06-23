@@ -1,1 +1,13 @@
+#footer {
+    padding: 20px;
+    color: #FBFBFF;
+    background-color: #20BF55;
+}
 
+.siteFooter {
+    text-align: center;
+}
+
+.siteFooter > a{
+    color: #FBFBFF;
+}

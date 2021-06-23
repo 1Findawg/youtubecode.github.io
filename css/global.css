@@ -1,3 +1,13 @@
+/*Color Scheme*/
+/*20BF55*/
+/*0B4F6C*/
+/*01BAEF*/
+/*FBFBFF*/
+/*757575*/
+body {
+    margin: 0;
+}
+
 .card {
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   margin: 20px 40px;
