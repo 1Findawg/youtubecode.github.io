@@ -1,6 +1,7 @@
 var allDiveCards = [];
 var diveCount = 6; // 6 or 11
 var judgeCount = 3; // 3, 5, 7
+var boardHeight = 10; // 1, 3, 10
 
 function addDiver() {
     var diveListArray = []
@@ -83,14 +84,38 @@ function updateTeam(diveCard,teamIndex) {
 
 function updateDiveNumber(diveCard,diveNumber) {
     var cardDiveNumber = document.getElementById("number"+diveCard.toString() + diveNumber.toString()).value;
-    if (platFormDives.ten[cardDiveNumber] !== undefined) {
-        allDiveCards[diveCard][3][diveNumber-1].number = cardDiveNumber;
-        allDiveCards[diveCard][3][diveNumber-1].name = platFormDives.ten[cardDiveNumber].name;
-        allDiveCards[diveCard][3][diveNumber-1].DD = platFormDives.ten[cardDiveNumber].DD;
-        reprintDivers();
+    if (boardHeight == 1) {
+        if (platFormDives.one[cardDiveNumber] !== undefined) {
+            allDiveCards[diveCard][3][diveNumber-1].number = cardDiveNumber;
+            allDiveCards[diveCard][3][diveNumber-1].name = platFormDives.one[cardDiveNumber].name;
+            allDiveCards[diveCard][3][diveNumber-1].DD = platFormDives.one[cardDiveNumber].DD;
+            reprintDivers();
+        }
+        else {
+            alert("You have entered a dive that does not exist!");
+        }
     }
-    else {
-        alert("You have entered a dive that does not exist!");
+    else if (boardHeight == 3) {
+        if (platFormDives.three[cardDiveNumber] !== undefined) {
+            allDiveCards[diveCard][3][diveNumber-1].number = cardDiveNumber;
+            allDiveCards[diveCard][3][diveNumber-1].name = platFormDives.three[cardDiveNumber].name;
+            allDiveCards[diveCard][3][diveNumber-1].DD = platFormDives.three[cardDiveNumber].DD;
+            reprintDivers();
+        }
+        else {
+            alert("You have entered a dive that does not exist!");
+        }
+    }
+    else if (boardHeight == 10) {
+        if (platFormDives.ten[cardDiveNumber] !== undefined) {
+            allDiveCards[diveCard][3][diveNumber-1].number = cardDiveNumber;
+            allDiveCards[diveCard][3][diveNumber-1].name = platFormDives.ten[cardDiveNumber].name;
+            allDiveCards[diveCard][3][diveNumber-1].DD = platFormDives.ten[cardDiveNumber].DD;
+            reprintDivers();
+        }
+        else {
+            alert("You have entered a dive that does not exist!");
+        }
     }
 }
 
@@ -200,6 +225,13 @@ function setJudgeCount(count) {
     reprintDivers();
 }
 
+function setMeter(height) {
+    allDiveCards = [];
+    boardHeight = height;
+    addDiver();
+    reprintDivers();
+}
+
 function calculateDiverTotalScore(diveCard){
     allDiveCards[diveCard][4] = 0;
     for (var i = 0; i < diveCount; i++) {
@@ -231,4 +263,4 @@ function sortDiversBasedOnTotalScore() {
 }
 
 //ToDo
-//window.addEventListener("load", addDiver());
+window.addEventListener("load", addDiver());
