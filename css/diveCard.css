@@ -110,3 +110,11 @@ input {
 .meter {
     margin: 0 0 0 auto;
 }
+
+.modalHeaderElements {
+    margin: 0 auto;
+}
+
+#judgeModalHeader {
+    margin: 0 0 15px 0;
+}
