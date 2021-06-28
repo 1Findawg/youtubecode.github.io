@@ -121,6 +121,11 @@ function updateDiveNumber(diveCard,diveNumber) {
 
 function updateJudgesScoreModal(diveCard,diveIndex) {
     document.getElementById("judgeScoreInput").innerHTML = "";
+    document.getElementById("judgeModalHeader").innerHTML = "<div class='modalHeaderElements'>Diver Name: " + allDiveCards[diveCard][1] + "</div>";
+    document.getElementById("judgeModalHeader").innerHTML += "<div class='modalHeaderElements'>Dive Number: " + allDiveCards[diveCard][3][diveIndex].number + "</div>";
+    document.getElementById("judgeModalHeader").innerHTML += "<div class='modalHeaderElements'>Dive Name: " + allDiveCards[diveCard][3][diveIndex].name + "</div>";
+    document.getElementById("judgeModalHeader").innerHTML += "<div class='modalHeaderElements'>Dive Degree of Difficulty: " + allDiveCards[diveCard][3][diveIndex].DD + "</div>";
+    
     for (var i = 1; i <= judgeCount; i++){
         var judgeScore = "";
         switch (i) {
