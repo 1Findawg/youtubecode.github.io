@@ -263,6 +263,9 @@ function sortDiversBasedOnTotalScore() {
         if (remainingDives !== 0) {
             allDiveCards[diveCard][6] = parseFloat((allDiveCards[diveCard][5] / remainingDives).toFixed(2));
         }
+        else {
+            allDiveCards[diveCard][6] = 0;
+        }
     }
 }
 
