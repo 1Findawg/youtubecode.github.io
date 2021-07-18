@@ -33,7 +33,7 @@ function reprintDivers() {
         document.getElementById("diverTable").innerHTML = "<tr><th>Rank</th><th>Name</th><th>Team</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>Score</th><th>To Win</th><th>AVG to Win</th></tr>";
     }
     for (diveCard in allDiveCards) {
-        var rank = "<td>" + allDiveCards[diveCard][0] + "</td>";
+        var rank = "<td>" + allDiveCards[diveCard][0] + "</td>"; // Need to reorder list to make this accurate
         var name = "<td><input id='diverName"+diveCard+"1' value='" + allDiveCards[diveCard][1] + "' onchange='updateName("+diveCard+",1)'></input></td>";
         var team = "<td><input id='diverTeam"+diveCard+"2' value='" + allDiveCards[diveCard][2] + "' onchange='updateTeam("+diveCard+",2)'></input></td>";
         var diveOne = getDiverDiveBlock(diveCard,3,0);
@@ -69,6 +69,7 @@ function getDiverDiveBlock(diveCard,diverIndex,diveIndex) {
     var diveNumberInput = "<input id='number"+diveCard.toString()+(diveIndex+1).toString()+"' value='"+allDiveCards[diveCard][diverIndex][diveIndex].number+"' onchange='updateDiveNumber("+diveCard+","+(diveIndex+1)+")'></input>";
     var diveName = "<div>"+ (allDiveCards[diveCard][diverIndex][diveIndex].name === "" ? "-" : allDiveCards[diveCard][diverIndex][diveIndex].name) +"</div>";
     var diveDD = "<div>"+(allDiveCards[diveCard][diverIndex][diveIndex].DD === null ? "-" : allDiveCards[diveCard][diverIndex][diveIndex].DD)+"</div>";
+//    var diveScore = "<div>"+(allDiveCards[diveCard][diverIndex][diveIndex].score === null ? "-" : allDiveCards[diveCard][diverIndex][diveIndex].score)+"</div>";
     var diveScore = "<button onclick='showJudgeScoreModal("+diveCard+","+diveIndex+")'>"+(allDiveCards[diveCard][3][diveIndex].score === null ? "Score" : allDiveCards[diveCard][3][diveIndex].score)+"</button>";
     return "<td>"+diveNumberInput+diveName+diveDD+diveScore+"</td>"
 }
@@ -262,9 +263,6 @@ function sortDiversBasedOnTotalScore() {
         }
         if (remainingDives !== 0) {
             allDiveCards[diveCard][6] = parseFloat((allDiveCards[diveCard][5] / remainingDives).toFixed(2));
-        }
-        else {
-            allDiveCards[diveCard][6] = 0;
         }
     }
 }
