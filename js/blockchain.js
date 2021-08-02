@@ -21,7 +21,6 @@ var mostSignificantCount = hexString.length;
 // id, nonce, data, previousHash, hash
 var blockchain = [[0,322373,"","0","fffffe96de257d33b3ad11f4aa73158fb9790d7e8174f8e062113fd97c657267"]];
 
-// Fix the addBlock to keep the nonce in the input value
 function addBlock() {
     var newIndex = blockchain.length;
     var prevIndex = newIndex - 1;
