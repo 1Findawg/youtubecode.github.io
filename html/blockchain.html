@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1Findawg - Blockchain</title>
+        <script src="../js/header.js"></script>
+        <script src="../js/blockchain.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/global.css">
+        <link rel="stylesheet" type="text/css" href="../css/blockchain.css">
+        <link rel="stylesheet" type="text/css" href="../css/header.css">
+        <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    </head>
+    <body>
+        <h1 class="center">1Findawg - Blockchain</h1>
+        <div id="header"></div>
+        <div class="card hashMatching">Hash Matching String: <input id="hexStringInput" onchange="updateHexStringInput()" value="ffff"></input></div>
+        <div id="cardWrapper" class="cardWrapper">
+            <div id="card0" class="card verified">
+                <div>
+                    Block Id: <input id="blockchainIdInput0" value="0" onchange="updateBlockId(0)"></input>
+                    Nonce: <input id="blockchainNonceInput0" value="322373" onchange="updateBlockNonce(0)"></input>
+                    Data: <input id="blockchainDataInput0" onchange="updateBlockData(0)"></input>
+                    <div>
+                        Previous Hash: <input id="blockchainPrevHashInput0" class="previousHashInput" value="0" onchange="updateBlockPrevHash(0)"></input>
+                    </div>
+                </div>
+                <div>
+                    Hash: <div id="blockchainHashOutput0">fffffe96de257d33b3ad11f4aa73158fb9790d7e8174f8e062113fd97c657267</div>
+                </div>
+                <button id="searchNonceBtn" onclick="searchForNonce(0)" class="searchBtn">Search For Nonce</button>
+            </div>
+        </div>
+        <div class="addBlockBtnWrapper">
+            <button id="addBlockBtn" onclick="addBlock()">Add Block</button>
+        </div>
+        <div class="credits">
+            Project inspired by: Anders Brownworth
+            His Videos: <a href="https://youtu.be/_160oMzblY8">Blockchain 101 - A Visual Demo</a>
+            <a href="https://youtu.be/xIDL_akeras">Blockchain 101 - Part 2 - Public / Private Keys and Signing</a>
+            His Website: <a href="http://anders.com/blockchain/">http://anders.com/blockchain/</a>
+            His code: <a href="https://github.com/anders94/blockchain-demo">https://github.com/anders94/blockchain-demo</a>
+            
+            MIT License
+            
+            Copyright (c) 2016 Anders Brownworth
+            
+            Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:
+            
+            Hashing Algorithm Code: <a href="https://geraintluff.github.io/sha256/">https://geraintluff.github.io/sha256/</a>
+        </div>
+    </body>
+    <div id="footer"></div>
+</html>
+
