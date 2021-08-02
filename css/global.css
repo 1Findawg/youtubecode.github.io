@@ -21,3 +21,11 @@ body {
 .flex {
     display: flex;
 }
+
+.credits {
+    width: 1000px;
+    margin: 100px auto 0;
+    white-space: pre;
+    text-align: center;
+    font-size: 12px;
+}
