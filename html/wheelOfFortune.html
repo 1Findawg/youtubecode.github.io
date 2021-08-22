@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1Findawg - Wheel of Fortune</title>
+        <script src="../js/header.js"></script>
+        <script src="../js/wheelOfFortunePhrases.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/global.css">
+        <link rel="stylesheet" type="text/css" href="../css/wheelOfFortune.css">
+        <link rel="stylesheet" type="text/css" href="../css/header.css">
+        <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    </head>
+    <body>
+        <h1 class="center">1Findawg - Wheel of Fortune</h1>
+        <div id="header"></div>
+        <div id="currentRound">Round: 1</div>
+        <div id="playerNameWrapper">
+            Player Name:
+            <input id="playerNameInput"></input>
+            <button onclick="addPlayer()">Add Player</button>
+        </div>
+        <div id="guessedLetters"></div>
+        <div id="allVowelsBought" class="hide">All Vowels Bought</div>
+        <div class="gameBoard">
+            <div id="boardTop" class="flex"></div>
+            <div id="boardMiddleTop" class="flex"></div>
+            <div id="boardMiddleBottom" class="flex"></div>
+            <div id="boardBottom" class="flex"></div>
+        </div>
+        <div id="puzzleHint"></div>
+        <div id="playerInfoOutput" class="flex"></div>
+        <div id="playerSpinOutputWrapper">
+            <div id="playerSpinOutput" class=""></div>
+            <button onclick="spin()">Spin Wheel</button>
+        </div>
+        <div id="playerGuessWrapper" class="flex">
+            <input id="playerGuessInput"></input>
+            <button onclick="guessALetter()">Guess a Letter</button>
+            <button id="puzzleSolveBtn" onclick="solvePuzzle()">Solve Puzzle</button>
+            <button id="bonusPuzzleSolveBtn" onclick="solveBonusPuzzle()" style="display: none;">Solve Bonus Puzzle</button>
+        </div>
+        <div id="bonusRoundModal" class="modal">
+            <div id="bonusModalContent" class="modal-content">
+            </div>
+        </div>
+        <script src="../js/wheelOfFortune.js"></script>
+    </body>
+    <div id="footer"></div>
+</html>
+
+
