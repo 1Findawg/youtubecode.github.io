@@ -1,0 +1,123 @@
+.gameBoard > div {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.boardLetter {
+    width: 30px;
+    height: 40px;
+    margin: 5px auto;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 30px;
+}
+
+.nonLetterSpace {
+    background-color: #01BAEF;
+}
+
+#puzzleHint {
+    margin: 10px auto;
+    width: 200px;
+    text-align: center;
+    font-size: 25px;
+}
+
+#playerNameWrapper {
+    margin: 0 auto;
+    width: 322px;
+}
+
+.playerMaster {
+    width: 150px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+
+.playerOne {
+    background-color: red;
+    color: white;
+   
+}
+
+.playerTwo {
+    background-color: yellow;
+}
+
+.playerThree {
+    background-color: blue;
+    color: white;
+}
+
+#playerInfoOutput {
+    width: 500px;
+    margin: 10px auto;
+}
+
+#playerGuessWrapper {
+    width: 400px;
+    margin: 10px auto;
+}
+
+#playerSpinOutputWrapper {
+    margin: 10px auto;
+    text-align: center;
+    width: 160px;
+}
+
+.selectedPlayer {
+    border: 5px solid black;
+}
+
+#guessedLetters {
+    width: 500px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+#currentRound {
+    width: 150px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+#allVowelsBought {
+    width: 130px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hide {
+    display: none;
+}
+
+.bonusOption:hover {
+    background-color: #01BAEF;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 30% auto 0px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+}
