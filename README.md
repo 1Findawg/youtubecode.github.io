@@ -16,5 +16,5 @@ Blockchain - Demo and Code: https://youtu.be/HMuhqnUNYS4
 Wheel Of Fortune - Demo: https://youtu.be/1LKwMXWGro0
   - Demo of the Wheel of Fortune game
 
-Wheel Of Fortune - Code: 
+Wheel Of Fortune - Code: https://youtu.be/BYXhhwNpQ04
   - Code walkthrough for the Wheel of Fortune game
