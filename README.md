@@ -12,3 +12,9 @@ Deal Or No Deal - Game and Code: https://youtu.be/8s8CYQ5HEzw
 
 Blockchain - Demo and Code: https://youtu.be/HMuhqnUNYS4
   - Gain a better understanding of the blockchain technology
+
+Wheel Of Fortune - Demo: https://youtu.be/1LKwMXWGro0
+  - Demo of the Wheel of Fortune game
+
+Wheel Of Fortune - Code: 
+  - Code walkthrough for the Wheel of Fortune game
