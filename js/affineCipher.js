@@ -2,7 +2,8 @@
 var decodedAlphabet = [];
 var encodedAlphabet = [];
 var a = 1;
-var b = 1;var re = new RegExp("^([A-Z])$");
+var b = 0;
+var re = new RegExp("^([A-Z])$");
 var encode = true;
 
 function setDecodedAlphabet(){
