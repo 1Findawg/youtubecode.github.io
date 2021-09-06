@@ -1,0 +1,40 @@
+td {
+    width: 100px;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}
+
+#plaintext, #ciphertext {
+    width: 95%;
+    max-width: 95%;
+    height: 50px;
+}
+
+#stepOneOutput {
+    width: 95%;
+    max-width: 95%;
+    height: 75px;
+    border: dashed 1px black;
+    margin: 0 auto;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+.wrapper {
+    margin: auto 20px;
+    width: 300px;
+}
+
+#encodeButton, #decodeButton {
+    width: 20px;
+    margin: auto;
+}
+
+#secondarySentenceInput {
+    width: 95%;
+    max-width: 95%;
+    height: 75px;
+}

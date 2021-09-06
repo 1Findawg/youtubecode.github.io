@@ -1,0 +1,33 @@
+td {
+    width: 20px;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}
+
+#plaintext, #ciphertext {
+    width: 95%;
+    max-width: 95%;
+    height: 50px;
+}
+
+#encodeButton, #decodeButton {
+    width: 20px;
+    margin: auto;
+}
+
+#rowInput {
+    width: 28px;
+}
+
+.wrapper {
+    margin: auto 20px;
+    width: 81px;
+}
+
+#rowsInputWrapper {
+    margin: auto 20px;
+    width: 81px
+}

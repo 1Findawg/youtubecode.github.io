@@ -1,0 +1,32 @@
+td {
+    width: 20px;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}
+
+#plaintext, #ciphertext {
+    width: 95%;
+    max-width: 95%;
+    height: 50px;
+}
+
+.wrapper {
+    margin: auto 20px;
+    width: 81px;
+}
+
+#keyTableWrapper {
+    margin: auto;
+}
+
+#keyInput {
+    width: 200px;
+}
+
+#encodeButton, #decodeButton {
+    width: 20px;
+    margin: auto;
+}

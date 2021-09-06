@@ -1,0 +1,78 @@
+.codeWrapper {
+    border: solid 1px black;
+    width: 70%;
+    height: 60px;
+    display: flex;
+}
+
+#solutionRow {
+    width: 70%;
+}
+
+.noColor {
+    margin: 15px auto;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.rowOutput {
+    border: solid 1px black;
+    width: 10%;
+    height: 60px;
+    margin: 0 5%;
+}
+
+button {
+    width: 10%;
+}
+
+.slot {
+    border: solid 1px black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 4px auto;
+    cursor: pointer;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.black {
+    background-color: black;
+}
+
+.white {
+    background-color: white;
+}
+
+.green {
+    background-color: green;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.redResult {
+    background-color: red;
+    border: solid 1px black;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 4px auto;
+}
+
+.whiteResult {
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 4px auto;
+}
