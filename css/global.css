@@ -29,3 +29,8 @@ body {
     text-align: center;
     font-size: 12px;
 }
+
+.introduction {
+    margin: 0 40px;
+    padding: 0 15px;
+}
