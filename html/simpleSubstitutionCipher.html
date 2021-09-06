@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1Findawg - Simple Substitution Cipher</title>
+        <script src="../js/header.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/global.css">
+        <link rel="stylesheet" type="text/css" href="../css/simpleSubstitutionCipher.css">
+        <link rel="stylesheet" type="text/css" href="../css/header.css">
+        <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    </head>
+    <body>
+        <h1 class="center">1Findawg - Simple Substitution Cipher</h1>
+        <div id="header"></div>
+        <div class="introduction">
+            <h3>Introduction:</h3>
+            <p>
+                A Simple Substitution Cipher is a shuffling of the letters to create a new mapping.
+                It can be completely random or it can start with a word that has no repeating letters.
+                The remaining key is made of the remaining letters in the alphabet.
+            </p>
+        </div>
+        <div class="card center">
+            Plaintext:
+            <textarea id="plaintext" onchange="encodeDecode()"></textarea>
+        </div>
+        <div class="card flex">
+            <div id="keyTableWrapper" class="center">
+                Key: <input id="keyInput" value="" onchange="displayAlphabetChart()"></input>
+                <table id="alphabetChartTable"></table>
+            </div>
+            
+            <div class="wrapper center">
+                <input id="encodeButton" type="radio" name="encodeDecode" onclick="setEncode(true)" checked>Encode</input>
+                <input id="decodeButton" type="radio" name="encodeDecode" onclick="setEncode(false)">Decode</input>
+            </div>
+        </div>
+        <div class="card center">
+            Ciphertext:
+            <textarea id="ciphertext" onchange="encodeDecode()"></textarea>
+        </div>
+        <script src="../js/simpleSubstitutionCipher.js"></script>
+    </body>
+    <div id="footer"></div>
+</html>
+
+
+
+

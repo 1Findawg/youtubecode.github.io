@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1Findawg - Letter Tally</title>
+        <script src="../js/header.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/global.css">
+        <link rel="stylesheet" type="text/css" href="../css/letterTally.css">
+        <link rel="stylesheet" type="text/css" href="../css/header.css">
+        <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    </head>
+    <body>
+        <h1 class="center">1Findawg - Letter Tally</h1>
+        <div id="header"></div>
+        <div class="introduction">
+            <h3>Introduction:</h3>
+            <p>
+                In order to determine a cipher key, the code breaker may want to know the frequency of the letters in the ciphertext.
+                There are charts available that give letter frequencies in the English language.
+                Matching the results from a ciphertext may not match to the percentages of the entire English language.
+                This is becuase of sample size. If the ciphertext is small this may not be helpful at all.
+                To calculate the counts and percentages of each letter in the ciphertext (or any text) paste it in the text input box below.
+            </p>
+        </div>
+        <div class="card center">
+            <div>
+                Text:
+            </div>
+            <textarea id="originalText" onchange="updateLetterFrequency()"></textarea>
+        </div>
+        <div class="card flex">
+            <div id="frequencyOutputWrapper">
+                <table id="frequencyOutput"></table>
+            </div>
+        </div>
+        <script src="../js/letterTally.js"></script>
+    </body>
+    <div id="footer"></div>
+</html>
+
+
+
+

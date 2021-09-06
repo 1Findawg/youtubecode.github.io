@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1Findawg - Rail-fence Cipher</title>
+        <script src="../js/header.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/global.css">
+        <link rel="stylesheet" type="text/css" href="../css/railFenceCipher.css">
+        <link rel="stylesheet" type="text/css" href="../css/header.css">
+        <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    </head>
+    <body>
+        <h1 class="center">1Findawg - Rail-fence Cipher</h1>
+        <div id="header"></div>
+        <div class="introduction">
+            <h3>Introduction:</h3>
+            <p>
+                The Rail-fence Cipher does not re-map the plaintext letters to new ciphertext letters.
+                This cipher is actually re-organizing the letters in a specifc pattern based on the number of rails (rows).
+                A padding needs to be added to the end of the plaintext.
+                This means adding space characters to the plaintext until the length is a multiple of (2 * (number of rails -1)).
+                A zig-zag pattern is created as tall as the number of rails selected.
+                Then the letters of the top-most rail are first in the ciphertext with the rail under that rail added next in the ciphertext.
+                This is repeated until all rails are added to the ciphertext.
+            </p>
+            <p>
+                To decode the ciphertext make sure that the length is a multiple of (2 * (number of rails -1)).
+                Then find K by calculating the length of the ciphertext) / (2 * (number of rails -1)).
+                The first and last rails wil have K letters.
+                All middle rows will have 2K letters.
+                Then just expand the spacing per rail so that you can read the plaintext in the zig-zag pattern.
+            </p>
+        </div>
+        <div class="card center">
+            Plaintext:
+            <textarea id="plaintext" onchange="encodeDecode()"></textarea>
+        </div>
+        <div class="card flex">
+            <div id="rowsInputWrapper" class="center">
+                Rails: <input id="railInput" type="number" value="1" min="1" onchange="updateRails()"></input>
+            </div>
+            <table id="railFenceTable"></table>
+            <div class="wrapper center">
+                <input id="encodeButton" type="radio" name="encodeDecode" onclick="setEncode(true)" checked>Encode</input>
+                <input id="decodeButton" type="radio" name="encodeDecode" onclick="setEncode(false)">Decode</input>
+            </div>
+        </div>
+        <div class="card center">
+            Ciphertext:
+            <textarea id="ciphertext" onchange="encodeDecode()"></textarea>
+        </div>
+        <script src="../js/railFenceCipher.js"></script>
+    </body>
+    <div id="footer"></div>
+</html>
+
+
+
+
