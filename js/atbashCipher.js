@@ -1,7 +1,6 @@
 // https://en.wikipedia.org/wiki/Atbash
 var decodedAlphabet = [];
 var encodedAlphabet = [];
-var encode = true;
 var re = new RegExp("^([A-Z])$");
 var encode = true;
 
@@ -25,14 +24,8 @@ function displayAlphabetChart(){
     var topRow = "";
     var bottomRow = "";
     for (index in decodedAlphabet) {
-        if (encode) {
-            topRow += "<td>" + decodedAlphabet[index] + "</td>";
-            bottomRow += "<td>" + encodedAlphabet[index] + "</td>";
-        }
-        else {
-            topRow += "<td>" + encodedAlphabet[index] + "</td>";
-            bottomRow += "<td>" + decodedAlphabet[index] + "</td>";
-        }
+        topRow += "<td>" + decodedAlphabet[index] + "</td>";
+        bottomRow += "<td>" + encodedAlphabet[index] + "</td>";
     }
     document.getElementById("alphabetChartTable").innerHTML = "<tr>" + topRow + "</tr>" + "<tr>" + bottomRow + "</tr>";
 }

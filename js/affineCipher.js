@@ -2,9 +2,7 @@
 var decodedAlphabet = [];
 var encodedAlphabet = [];
 var a = 1;
-var b = 1;
-var encodeAlphabet = true;
-var re = new RegExp("^([A-Z])$");
+var b = 1;var re = new RegExp("^([A-Z])$");
 var encode = true;
 
 function setDecodedAlphabet(){
@@ -28,14 +26,8 @@ function displayAlphabetChart(){
     var topRow = "";
     var bottomRow = "";
     for (index in decodedAlphabet) {
-        if (encodedAlphabet) {
-            topRow += "<td>" + decodedAlphabet[index] + "</td>";
-            bottomRow += "<td>" + encodedAlphabet[index] + "</td>";
-        }
-        else {
-            topRow += "<td>" + encodedAlphabet[index] + "</td>";
-            bottomRow += "<td>" + decodedAlphabet[index] + "</td>";
-        }
+        topRow += "<td>" + decodedAlphabet[index] + "</td>";
+        bottomRow += "<td>" + encodedAlphabet[index] + "</td>";
     }
     document.getElementById("alphabetChartTable").innerHTML = "<tr>" + topRow + "</tr>" + "<tr>" + bottomRow + "</tr>";
     encodeDecode();
