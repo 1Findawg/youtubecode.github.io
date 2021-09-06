@@ -755,12 +755,12 @@ function handleBonusRound(){
     // Spin - Done
     // randomly select a puzzle from that category - Done
     setNewPuzzle(false);
-    // auto guess RSTLNE - Done
+    // auto guess RSTLNE
     guessedLetters = ["R","S","T","L","N","E"];
     document.getElementById("guessedLetters").innerHTML = guessedLetters.toString().replaceAll(","," ");
     guessBonusRound();
     setTimeout(function(){
-        // let player pick 3 consonants and 1 vowel (4 consonants if player has wild) - Done
+        // let player pick 3 consonants and 1 vowel
         document.getElementById("bonusModalContent").innerHTML = "<div><input id='c1' placeholder='Consonant'></input><input id='c2' placeholder='Consonant'></input><input id='c3' placeholder='Consonant'>" + (players[currentPlayerIndex].hasWild ? "<input id='c4' placeholder='Consonant'></input>" : "") + "</input><input id='v1' placeholder='Vowel'></input><button onclick='submitBonusLetters()'>Submit Letters</button></div>";
         document.getElementById("bonusRoundModal").style.display = "block";
     }, 10000);
