@@ -27,3 +27,6 @@ Atbash Cipher - Demo and Code: https://youtu.be/Jr4LjITUjhg
 
 Affine Cipher - Demo and Code: https://youtu.be/wYiduFtLA1c
   - Let's see how the Affine Cipher uses 2 coefficient values to create a cipher
+
+Rail-fence Cipher - Demo and Code: https://youtu.be/eXa9CS5XS9w
+  - Exploring the interesting way the Rail-fence Cipher repositions letter instead of re-mapping the letters
