@@ -21,3 +21,6 @@ Wheel Of Fortune - Code: https://youtu.be/BYXhhwNpQ04
 
 Caesar Cipher / ROT-13 - Demo and Code: https://youtu.be/X6fHe8oJ1qA
   - What is a Caesar Cipher (ROT-13) and how did I code it
+
+Atbash Ciphe - Demo and Code: https://youtu.be/Jr4LjITUjhg
+  - The Atbash Cipher is really cool because it is a mirror image of the original 
