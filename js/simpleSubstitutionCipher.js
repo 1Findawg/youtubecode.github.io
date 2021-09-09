@@ -1,6 +1,5 @@
 var decodedAlphabet = [];
 var encodedAlphabet = [];
-var shift = 0;
 var re = new RegExp("^([A-Z])$");
 var encode = true;
 var key = "FINDAWGBCEHJKLMOPQRSTUVXYZ";
