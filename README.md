@@ -30,3 +30,6 @@ Affine Cipher - Demo and Code: https://youtu.be/wYiduFtLA1c
 
 Rail-fence Cipher - Demo and Code: https://youtu.be/eXa9CS5XS9w
   - Exploring the interesting way the Rail-fence Cipher repositions letter instead of re-mapping the letters
+
+Simple Substitution Cipher - Demo and Code: https://youtu.be/VY9DdiVMH0M
+  - This explains the idea of a Simple Substitution Cipher. I have discussed a range of specific types of substitution ciphers and this gives the most basic implementation of that concept.
