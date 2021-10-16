@@ -1,4 +1,4 @@
-var letterFrequencyArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var letterFrequencyArray;
 var re = new RegExp("^([A-Z])$");
 var totalLetterCount = 0;
 
@@ -18,6 +18,7 @@ function displayAlphabetChart() {
 }
 
 function updateLetterFrequency() {
+    reset();
     document.getElementById("originalText").value = document.getElementById("originalText").value.toUpperCase();
     let text = document.getElementById("originalText").value;
     for (letter in text) {
@@ -29,7 +30,12 @@ function updateLetterFrequency() {
     displayAlphabetChart();
 }
 
+function reset() {
+    letterFrequencyArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+}
+
 function letterTallyLoad() {
+    reset();
     displayAlphabetChart();
 }
 
