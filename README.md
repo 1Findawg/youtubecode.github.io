@@ -36,3 +36,6 @@ Simple Substitution Cipher - Demo and Code: https://youtu.be/VY9DdiVMH0M
 
 Baconian Cipher - Demo and Code: https://youtu.be/SVMnzyJkR8U
   - The Baconian Cipher takes in 2 inputs to create a cipher text. Learn how this works.
+
+Letter Tally - Demo and Code: https://youtu.be/zH3wbnb9Y1M
+  - Trying to decipher some cipher text? This will show you how to get started trying to crack the code.
