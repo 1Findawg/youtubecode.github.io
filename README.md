@@ -39,3 +39,6 @@ Baconian Cipher - Demo and Code: https://youtu.be/SVMnzyJkR8U
 
 Letter Tally - Demo and Code: https://youtu.be/zH3wbnb9Y1M
   - Trying to decipher some cipher text? This will show you how to get started trying to crack the code.
+
+Cybersecurity Awareness Month 2021 - Password Security - Demo and Code: https://youtu.be/Qz1iRzW-ng8
+  - For Cybersecurity Awareness Month 2021 I wanted to help explain how passwords are stored and how they can be vulnerable to attacks.
