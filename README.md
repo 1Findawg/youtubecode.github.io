@@ -43,5 +43,5 @@ Letter Tally - Demo and Code: https://youtu.be/zH3wbnb9Y1M
 Cybersecurity Awareness Month 2021 - Password Security - Demo and Code: https://youtu.be/Qz1iRzW-ng8
   - For Cybersecurity Awareness Month 2021 I wanted to help explain how passwords are stored and how they can be vulnerable to attacks.
 
-Mastermind - Demo and Code: 
+Mastermind - Demo and Code: https://youtu.be/N1qZ07MEpsY
   - Mastermind is a fun game to guess a code. Learn about how the computer determines which parts of the code are correct and which parts need to be moved around.
