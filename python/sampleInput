@@ -1,0 +1,32 @@
+{
+    "accounts":[
+        {
+            "bankName":"<<insert bank/insitution name here>>",
+            "type":"{Checking, Savings, Cash}",
+            "balance":0.00
+        },
+        {
+            "bankName":"<<insert bank/insitution name here>>",
+            "type":"Investment",
+            "securities":[
+                {
+                    "ticker":"<<insert ticker symbol>>",
+                    "shares":0.00,
+                    "search":true,
+                    "price":""
+                },
+                {
+                    "ticker":"<<insert ticker symbol>>",
+                    "shares":0.00,
+                    "search":false,
+                    "price":0.00
+                }
+            ]
+        },
+        {
+            "bankName":"Wallet",
+            "type":"Cash",
+            "balance":0.00
+        }
+    ]
+}
