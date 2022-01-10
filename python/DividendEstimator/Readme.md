@@ -1,3 +1,5 @@
+Video: https://youtu.be/XQwcvTf2eN0
+
 I created a python program that will read in a JSON input file that contains a list of securities with dividends.
 Each security object contains a ticker, name and a list of historical dividends.
 To run the program enter the command:
