@@ -1,3 +1,5 @@
+Video: https://youtu.be/1NfS062Vr2k
+
 I created a program that will read in a JSON file and for any publically traded security given it will look it up using Yahoo Finance. 
 Then it will scrub the current price from the webpage and multiply it by the number of shares given in the JSON file. 
 Then a total for each account is calculated and a total asset calculation is executed.
