@@ -2,6 +2,7 @@
 import os
 import sys
 import math
+import datetime
 import json
 
 def getDividendArray(dividendList):
@@ -37,6 +38,8 @@ def printSharesEstimates(totalDividend, dividendList, shares):
     print("Average: $" + str(round(dividendArray[1], 4)) + " per share for a total share count of " + str(round(sharesArray[1],4)) + ". You would need " + str(round(sharesArray[1] - float(shares),4)) + " more shares.")
     print("Largest: $" + str(round(dividendArray[2], 4)) + " per share for a total share count of " + str(round(sharesArray[2],4)) + ". You would need " + str(round(sharesArray[2] - float(shares),4)) + " more shares.")
     print("Last: $" + str(round(dividendArray[3], 4)) + " per share for a total share count of " + str(round(sharesArray[3],4)) + ". You would need " + str(round(sharesArray[3] - float(shares),4)) + " more shares.")
+
+now = datetime.datetime.now()
 
 jsonInputFile = open(sys.argv[1],)
 securities = json.load(jsonInputFile)
