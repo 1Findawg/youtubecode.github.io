@@ -99,7 +99,7 @@ def searchForPrice(ticker):
     tickerDictionary[ticker] = price
 
 # Opening JSON file
-jsonInputFile = open('input.json',)
+jsonInputFile = open(sys.argv[1],)
 
 # returns JSON object as
 # a dictionary
