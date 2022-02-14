@@ -1,0 +1,57 @@
+.zero {
+    background-color: black;
+}
+
+.one {
+    background-color: green;
+}
+
+.two {
+    background-color: purple;
+}
+
+.three {
+    background-color: red;
+}
+
+.four {
+    background-color: blue;
+}
+
+.five {
+    background-color: yellow;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+}
+
+table {
+    text-align: center;
+}
+
+.card {
+    display: flex;
+}
+
+.playerOptionsWrapper {
+    margin: 0 auto;
+}
+
+#options {
+    display: flex;
+    margin: 10px 0;
+}
+
+.optionsSquare {
+    width: 50px;
+    height: 50px;
+    margin: 0 2px;
+}
+
+.optionsSquareDisabled {
+    width: 25px !important;
+    height: 25px !important;
+    margin: 12px;
+}
