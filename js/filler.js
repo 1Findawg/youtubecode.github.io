@@ -224,11 +224,9 @@ function addArrayToArray(array1, array2) {
 }
 
 function addElementToArray(array, element) {
-    if (array.length > 0) {
-        for (let i = 0; i < array.length; i++) {
-            if (array[i][0] === element[0] && array[i][1] === element[1]) {
-                return array;
-            }
+    for (let i = 0; i < array.length; i++) {
+        if (array[i][0] === element[0] && array[i][1] === element[1]) {
+            return array;
         }
     }
     let tempArray = array;
