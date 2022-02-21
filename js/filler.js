@@ -27,6 +27,7 @@ function setup(width, height) {
     addSquareToPlayer(playerOneArray,0,width-1);
     addSquareToPlayer(playerTwoArray,height-1,0);
     displayGameboard();
+    displayPlayersScores();
     displayOptions(6);
     displayPlayerId();
 }
@@ -41,6 +42,23 @@ function displayGameboard() {
         gameboardHtml += "</tr>";
     }
     document.getElementById('gameBoard').innerHTML = gameboardHtml;
+}
+
+function displayPlayersScores() {
+    let playerOneScore = "<div class='playerScore'>Player 1 Score: " + playerOneArray.length + "</div>";
+    let playerTwoScore = "<div class='playerScore'>Player 2 Score: " + playerTwoArray.length + "</div>";
+    let bothPlayersScores = "<div id=scoreWrapper>" + playerOneScore + playerTwoScore + "</div>";
+    let winnerMessage = "";
+    if ((playerOneArray.length + playerTwoArray.length) === 64) {
+        if (playerOneArray.length !== playerTwoArray.length) {
+            winnerMessage = "<div id='endGameMsg'>Player " + ((playerOneArray.length > playerTwoArray.length) ? "1" : "2") + " Won!</div>";
+        }
+        else {
+            winnerMessage = "<div id='endGameMsg'>Player 1 and Player 2 Tied</div>";
+        }
+    }
+
+    document.getElementById('playersScores').innerHTML = bothPlayersScores + winnerMessage;
 }
 
 function displayPlayerId() {
@@ -83,6 +101,7 @@ function changePlayersColor(colorNumber) {
         }
         addNewColorsToPlayer();
         displayGameboard();
+        displayPlayersScores();
         playerOneTurn = !playerOneTurn;
         displayPlayerId();
     }
@@ -114,65 +133,85 @@ function addNewColorsToPlayer() {
 
 function getSurroundingNewColors(currentColorIndex, playerColorCode) {
     let resultArray = [];
-    // top left corner
-    if (currentColorIndex[0] === 0 && currentColorIndex[1] === 0) {
+    // all but bottom row
+    if (currentColorIndex[0] !== gameBoard.length-1) {
         gameBoard[currentColorIndex[0]+1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]+1, currentColorIndex[1]]) : '';
-        gameBoard[currentColorIndex[0]][currentColorIndex[1]+1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],currentColorIndex[1]+1]) : '';
     }
     
-    // top right corner
-    else if (currentColorIndex[0] === 0 && currentColorIndex[1] === gameBoard[0].length-1) {
-        gameBoard[currentColorIndex[0]+1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]+1, currentColorIndex[1]]) : '';
-        gameBoard[currentColorIndex[0]][currentColorIndex[1]-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],currentColorIndex[1]-1]) : '';
+    // all but top row
+    if (currentColorIndex[0] !== 0) {
+        gameBoard[currentColorIndex[0]-1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]-1, currentColorIndex[1]]) : '';
     }
     
-    // bottom left corner
-    else if (currentColorIndex[0] === gameBoard.length-1 && currentColorIndex[1] === 0) {
-        gameBoard[currentColorIndex[0]-1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]-1,currentColorIndex[1]]) : '';
-        gameBoard[currentColorIndex[0]][currentColorIndex[1]+1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],currentColorIndex[1]+1]) : '';
+    // all but right row
+    if (currentColorIndex[1] !== gameBoard[0].length-1) {
+        gameBoard[currentColorIndex[0]][currentColorIndex[1]+1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0], currentColorIndex[1]+1]) : '';
     }
     
-    // bottom right corner
-    else if (currentColorIndex[0] === gameBoard.length-1 && currentColorIndex[1] === gameBoard[0].length-1) {
-        gameBoard[currentColorIndex[0]-1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]-1,currentColorIndex[1]]) : '';
-        gameBoard[currentColorIndex[0]][currentColorIndex[1]-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],currentColorIndex[1]-1]) : '';
+    // all but left row
+    if (currentColorIndex[1] !== 0) {
+        gameBoard[currentColorIndex[0]][currentColorIndex[1]-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0], currentColorIndex[1]-1]) : '';
     }
     
-    // top row
-    else if (currentColorIndex[0] === 0) {
-        gameBoard[0][currentColorIndex[1]-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[0,currentColorIndex[1]-1]) : '';
-        gameBoard[1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[1,currentColorIndex[1]]) : '';
-        gameBoard[0][currentColorIndex[1]+1] === playerColorCode ? resultArray = addElementToArray(resultArray,[0,currentColorIndex[1]+1]) : '';
-    }
-    
-    // bottom row
-    else if (currentColorIndex[0] === gameBoard.length-1) {
-        gameBoard[gameBoard.length-1][currentColorIndex[1]-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[gameBoard.length-1,currentColorIndex[1]-1]) : '';
-        gameBoard[gameBoard.length-2][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[gameBoard.length-2,currentColorIndex[1]]) : '';
-        gameBoard[gameBoard.length-1][currentColorIndex[1]+1] === playerColorCode ? resultArray = addElementToArray(resultArray,[gameBoard.length-1,currentColorIndex[1]+1]) : '';
-    }
-    
-    // left column
-    else if (currentColorIndex[1] === 0) {
-        gameBoard[currentColorIndex[0]-1][0] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]-1,0]) : '';
-        gameBoard[currentColorIndex[0]][1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],1]) : '';
-        gameBoard[currentColorIndex[0]+1][0] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]+1,0]) : '';
-    }
-    
-    // right column
-    else if (currentColorIndex[1] === gameBoard[0].length-1) {
-        gameBoard[currentColorIndex[0]-1][gameBoard[1].length-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]-1,gameBoard[1].length-1]) : '';
-        gameBoard[currentColorIndex[0]][gameBoard[1].length-2] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],gameBoard[1].length-2]) : '';
-        gameBoard[currentColorIndex[0]+1][gameBoard[1].length-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]+1,gameBoard[1].length-1]) : '';
-    }
-    
-    // remaining centers
-    else {
-        gameBoard[currentColorIndex[0]-1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]-1,currentColorIndex[1]]) : '';
-        gameBoard[currentColorIndex[0]+1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]+1,currentColorIndex[1]]) : '';
-        gameBoard[currentColorIndex[0]][currentColorIndex[1]-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],currentColorIndex[1]-1]) : '';
-        gameBoard[currentColorIndex[0]][currentColorIndex[1]+1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],currentColorIndex[1]+1]) : '';
-    }
+//    // top left corner
+//    if (currentColorIndex[0] === 0 && currentColorIndex[1] === 0) {
+//        gameBoard[currentColorIndex[0]+1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]+1, currentColorIndex[1]]) : '';
+//        gameBoard[currentColorIndex[0]][currentColorIndex[1]+1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],currentColorIndex[1]+1]) : '';
+//    }
+//
+//    // top right corner
+//    else if (currentColorIndex[0] === 0 && currentColorIndex[1] === gameBoard[0].length-1) {
+//        gameBoard[currentColorIndex[0]+1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]+1, currentColorIndex[1]]) : '';
+//        gameBoard[currentColorIndex[0]][currentColorIndex[1]-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],currentColorIndex[1]-1]) : '';
+//    }
+//
+//    // bottom left corner
+//    else if (currentColorIndex[0] === gameBoard.length-1 && currentColorIndex[1] === 0) {
+//        gameBoard[currentColorIndex[0]-1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]-1,currentColorIndex[1]]) : '';
+//        gameBoard[currentColorIndex[0]][currentColorIndex[1]+1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],currentColorIndex[1]+1]) : '';
+//    }
+//
+//    // bottom right corner
+//    else if (currentColorIndex[0] === gameBoard.length-1 && currentColorIndex[1] === gameBoard[0].length-1) {
+//        gameBoard[currentColorIndex[0]-1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]-1,currentColorIndex[1]]) : '';
+//        gameBoard[currentColorIndex[0]][currentColorIndex[1]-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],currentColorIndex[1]-1]) : '';
+//    }
+//
+//    // top row
+//    else if (currentColorIndex[0] === 0) {
+//        gameBoard[0][currentColorIndex[1]-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[0,currentColorIndex[1]-1]) : '';
+//        gameBoard[1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[1,currentColorIndex[1]]) : '';
+//        gameBoard[0][currentColorIndex[1]+1] === playerColorCode ? resultArray = addElementToArray(resultArray,[0,currentColorIndex[1]+1]) : '';
+//    }
+//
+//    // bottom row
+//    else if (currentColorIndex[0] === gameBoard.length-1) {
+//        gameBoard[gameBoard.length-1][currentColorIndex[1]-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[gameBoard.length-1,currentColorIndex[1]-1]) : '';
+//        gameBoard[gameBoard.length-2][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[gameBoard.length-2,currentColorIndex[1]]) : '';
+//        gameBoard[gameBoard.length-1][currentColorIndex[1]+1] === playerColorCode ? resultArray = addElementToArray(resultArray,[gameBoard.length-1,currentColorIndex[1]+1]) : '';
+//    }
+//
+//    // left column
+//    else if (currentColorIndex[1] === 0) {
+//        gameBoard[currentColorIndex[0]-1][0] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]-1,0]) : '';
+//        gameBoard[currentColorIndex[0]][1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],1]) : '';
+//        gameBoard[currentColorIndex[0]+1][0] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]+1,0]) : '';
+//    }
+//
+//    // right column
+//    else if (currentColorIndex[1] === gameBoard[0].length-1) {
+//        gameBoard[currentColorIndex[0]-1][gameBoard[1].length-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]-1,gameBoard[1].length-1]) : '';
+//        gameBoard[currentColorIndex[0]][gameBoard[1].length-2] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],gameBoard[1].length-2]) : '';
+//        gameBoard[currentColorIndex[0]+1][gameBoard[1].length-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]+1,gameBoard[1].length-1]) : '';
+//    }
+//
+//    // remaining centers
+//    else {
+//        gameBoard[currentColorIndex[0]-1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]-1,currentColorIndex[1]]) : '';
+//        gameBoard[currentColorIndex[0]+1][currentColorIndex[1]] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0]+1,currentColorIndex[1]]) : '';
+//        gameBoard[currentColorIndex[0]][currentColorIndex[1]-1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],currentColorIndex[1]-1]) : '';
+//        gameBoard[currentColorIndex[0]][currentColorIndex[1]+1] === playerColorCode ? resultArray = addElementToArray(resultArray,[currentColorIndex[0],currentColorIndex[1]+1]) : '';
+//    }
     return resultArray;
 }
 
