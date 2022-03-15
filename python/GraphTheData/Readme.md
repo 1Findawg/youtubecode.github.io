@@ -1,4 +1,4 @@
-Video: 
+Video: https://youtu.be/fGLxmgdLBbs
 
 Inspiration Video by Matt Parker on the channel Stand-up Maths: https://youtu.be/iwzzv1biHv8
 
